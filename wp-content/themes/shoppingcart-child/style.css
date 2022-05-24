@@ -33,13 +33,49 @@ p  {
 }
 
 #page {
-    background-color: #FFF;
+    background-color: transparent;
+    position: relative;
 }
 
+#page:before {
+    content:"";
+    background-image: url('/prawn/wp-content/uploads/2022/05/depositphotos_12107007-stock-illustration-vintage-pattern-wallpaper-vector-seamless.jpg');
+    background-size: 30%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0.05;
+    height: 100%;
+    z-index: -2;
+}
+
+#page:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0.3;
+    height: 100%;
+    background-color: #C36839;
+}
+
+/* Skjul WordPress widgets */
 aside#block-4 {
     display: none;
 }
 
+.header-right .my-cart-wrap {
+    color: #FFF;
+}
+
+input[type="search"] {
+    background-color: #f8f8f8;
+}
+
+/* Omvendt rækkefølge af sidebaren og hoved content */
 #content .wrap {
     display: flex;
     flex-direction: row-reverse;
@@ -50,6 +86,7 @@ aside#block-4 {
     padding-left: 0;
 }
 
+/* Skjul side titel */
 .page-header {
     display: none;
 }
@@ -59,6 +96,7 @@ aside#block-4 {
     margin-bottom: 0;
 }
 
+/* Sidemenu punkter */
 #secondary .widget ul li a {
     padding: 15px;
     display: inline-block;
@@ -84,10 +122,12 @@ html body #secondary > .widget {
     padding: 5px;
 }
 
+/* Start med at skjule underpunkter */
 .sub-menu {
     display: none;
 }
 
+/* CSS pil for dropdown */
 .menu-item-has-children > a:after {
     margin-left: 15px;
     content:"";
@@ -101,6 +141,7 @@ html body #secondary > .widget {
     top: -3px;
 }
 
+/* Når hovedmenupunkten er aktiv */
 .menu-item-active > a:after {
   transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
@@ -113,10 +154,35 @@ html body #secondary > .widget {
 
 #primary {
     padding: 0;
+    background-color: transparent;
 }
 
 .heading {
     margin-top: 50px;
+}
+
+.main-header {
+    text-align: right;
+}
+
+.top-header > #site-branding {
+    background-image: url('/prawn/wp-content/uploads/2022/05/pexels-photo-5705495.jpeg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center 68%;
+    position: relative;
+    padding: 45px 0 45px;
+}
+
+.top-header > #site-branding:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0.6;
+    height: 100%;
+    background-color: rgb(0 0 0);
 }
 
 .site-footer {
@@ -126,11 +192,6 @@ html body #secondary > .widget {
 .site-info .wrap {
     border-top: none;
     color: #FFF;
-}
-
-#search-box input[type="search"],
-.bbp-submit-wrapper button.submit  {
-    border-color: #c3a656;
 }
 
 .site-info {
@@ -146,10 +207,13 @@ body {
     margin-bottom: 0;
 }
 
+#search-box input[type="search"],
+.bbp-submit-wrapper button.submit,
 .woocommerce ul.products li.product .button:hover {
-    border-color: #c3a656;
+    border-color: #DBD0C0;
 }
 
+/* Farve overrides */
 #search-box .woocommerce-product-search button[type="submit"],
 .search-submit,
 .sc-grid-product-img .onsale:before,
@@ -165,7 +229,7 @@ body {
 .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,
 .go-to-top .icon-bg,
 .woocommerce ul.products li.product .button:hover  {
-    background-color: #c3a656;
+    background-color: #DBD0C0;
 }
 
 #site-title a,
@@ -199,11 +263,11 @@ body {
 .bbp-submit-wrapper button.submit,
 .woocommerce-Price-amount.amount ,
 ul li a:hover, ol li a:hover  {
-    color: #c3a656;
+    color: #DBD0C0;
 }
 
 
-
+/* Responsive */
 @media only screen and (max-width: 1023px) {
     #secondary {
         display: none;
